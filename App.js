@@ -33,15 +33,21 @@ export default function App() {
         />
       </View>
       <View>
-        <Button
-          label="Choose a photo"
-          theme="primary"
-          onPress={pickImageAsync}
-        />
-        <Button
-          label="Use this photo"
-          onPress={() => setShowAppOptions(true)}
-        />
+        {showAppOptions ? (
+          <View />
+        ) : (
+          <View style={styles.footerContainer}>
+            <Button
+              label="Choose a photo"
+              theme="primary"
+              onPress={pickImageAsync}
+            />
+            <Button
+              label="Use this photo"
+              onPress={() => setShowAppOptions(true)}
+            />
+          </View>
+        )}
       </View>
       <StatusBar style="auto" />
     </View>
